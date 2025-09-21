@@ -1,0 +1,145 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 1.5rem 2rem;
+  gap: 1.5rem;
+}
+
+header {
+  padding-top: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  max-width: 640px;
+  color: #94a3b8;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.visualization {
+  position: relative;
+  background: radial-gradient(circle at top, rgba(37, 99, 235, 0.15), transparent 70%);
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 540px;
+}
+
+.viewer {
+  position: absolute;
+  inset: 0;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  z-index: 1;
+  font-weight: 600;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.control-panel,
+.metadata-panel {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+}
+
+.control-panel section,
+.metadata-panel section {
+  margin-bottom: 1.25rem;
+}
+
+.control-panel h2,
+.metadata-panel h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+.control-panel select,
+.control-panel input,
+.control-panel button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.6);
+  color: inherit;
+}
+
+.control-panel button {
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #0f172a;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.control-panel button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: rgba(148, 163, 184, 0.2);
+  color: #cbd5f5;
+}
+
+.annotation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.detail p {
+  margin: 0.25rem 0;
+}
+
+.metadata-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.metadata-panel li {
+  margin: 0.25rem 0;
+  color: #cbd5f5;
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .visualization {
+    min-height: 400px;
+  }
+}
